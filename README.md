@@ -1,4 +1,5 @@
-# IOS苹果手机TikTok （免拔卡）方法
+# Shadowrocket 小火箭
+##  iPhone （免拔卡）解锁 TikTok + 换区 + 发布视频 + 直播 + 点赞评论
 ### 视频教学：https://youtu.be/INujpQttw84
 ## 必要准备
 - 1.拥有Shadowrocket 最新版本授权用户（设置-关于中查看版本：2.1.24及以上版本均可）；
@@ -24,17 +25,19 @@
 
 2.找到[URL Rewrite]字段，复制并粘贴Tiktok 重写规则（URL Rewrite）代码：
 
-  [URL Rewrite]
-  (?<=_region=)CN(?=&) JP 307
-  (?<=&mcc_mnc=)4 2 307
-  ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
-  (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
+
+    [URL Rewrite]
+    (?<=_region=)CN(?=&) JP 307
+    (?<=&mcc_mnc=)4 2 307
+    ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+    (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
   
-  [MITM]
-  hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
+    [MITM]
+    hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
 
 ### Shadowrocket Tiktok 如何换区操作
 如果需要观看不同国家的TikTok视频，只需要修改[URL Rewrite]下方代码中的JP，比如
 想看韩国的，则将代码JP改为KR，如下：
+  
     CN $1 KR 302
     (?<=\?version_code=)16.. $11 302
