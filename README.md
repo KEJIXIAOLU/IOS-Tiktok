@@ -23,14 +23,15 @@
 1.打开Shadowrocket – 配置 – 找到本地文件内的配置文件，默认是default.conf （举例） – 点击 default.conf 点击编辑纯文本；
 
 2.找到[URL Rewrite]字段，复制并粘贴Tiktok 重写规则（URL Rewrite）代码：
-    [URL Rewrite]
-(?<=_region=)CN(?=&) JP 307
-(?<=&mcc_mnc=)4 2 307
-^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
-(?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
 
-[MITM]
-hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
+  [URL Rewrite]
+  (?<=_region=)CN(?=&) JP 307
+  (?<=&mcc_mnc=)4 2 307
+  ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+  (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
+  
+  [MITM]
+  hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
 
 ### Shadowrocket Tiktok 如何换区操作
 如果需要观看不同国家的TikTok视频，只需要修改[URL Rewrite]下方代码中的JP，比如
