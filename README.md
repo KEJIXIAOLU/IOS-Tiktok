@@ -1,4 +1,4 @@
-# Shadowrocket小火箭解锁 TikTok 代码
+# 小火箭Shadowrocket 解锁 TikTok 代码
 
 ### 找到 <code>[URL Rewrite]</code> 字段，复制并粘贴Tiktok 重写规则（URL Rewrite）代码：
 
